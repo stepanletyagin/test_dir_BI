@@ -32,3 +32,17 @@ Docker container packages are self-contained and can run applications in any env
 1.   Difficult to manage large amount of containers.
 2.   Not right for all tasks. Some applications simply need to be monolithic - they're designed that way, and benefits like scalability and fast deployment don't readily apply.
 3. Limited tools. The kind of tools needed to monitor and manage containers are still lacking in the industry.
+
+* [0.5] Explain how Docker works: what are Dockerfiles, how are containers created, and how are they run and destroyed?
+
+A Dockerfile is a text document (without a file extension) that contains the instructions to set up an environment for a Docker container. You can build a Docker image using a Dockerfile.
+
+Now, let's see how Docker containers are created, run and destroyed:
+
+To create container first things first we have to:
+
+\# create a directory to work in
+
+mkdir example
+
+cd example
