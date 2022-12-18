@@ -41,8 +41,8 @@ Now, let's see how Docker containers are created, run and destroyed:
 
 To create container first things first we have to:
 
-\# create a directory to work in
-
+```
+# create a directory to work in
 mkdir example
-
 cd example
+```
