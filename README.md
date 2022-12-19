@@ -110,4 +110,105 @@ Here is the list of tools and their versions that are used in your work:
 
 -----
 
+### Install conda
 
+To install Conda on my OS I used instruction [here](https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html).
+
+For testin my installation I did comand in my terminal:
+
+```
+conda list
+```
+
+to see the list of installed packages.
+
+-----
+
+### Create a new virtual environment
+
+To do that step, I performed: 
+
+```
+conda create -n CIBP_assgmnt_1 --no-default-packages
+Proceed ([y]/n)? y
+```
+environment location:
+Users/stepanletyagin/opt/anaconda3/envs/CIBP_assgmnt_1
+
+```
+conda activate CIBP_assgmnt_1 # to activate environment 
+```
+
+-----
+
+### Install all necessary packages
+
+Actually, I wasn't able to get any of these packages at all at first, not just some of them :)
+
+As soon as 'defaults' already in 'channels' list I performed:
+
+```
+conda config --add channels bioconda
+conda config --add channels conda-forge
+```
+
+if 'defaults' are not in 'channels', do this before :
+
+```
+conda config --add channels defaults
+```
+[source](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/channels.html)
+
+and then I did:
+
+```
+conda install -y fastqc=0.11.9
+conda install -y star=2.7.10b
+conda install -y samtools=1.16.1 
+conda install -y picard
+conda install -y salmon=1.9.0
+conda install -y bedtools=2.30.0
+conda install -y multiqc=1.13
+```
+
+And it worked completely fine, but too for too much time. 
+
+-----
+
+### Export the environment
+
+To do that, I performed: 
+
+```
+conda env export --from-history > env_out.yml
+```
+
+To deactivate and remove environment name:
+
+```
+conda deactivate
+conda remove --name CIBP_assgmnt_1 --all
+```
+
+To rebuild environment from file:
+
+```
+conda env create -f env_out.yml
+```
+
+### env_out.yml
+
+name: CIBP_assgmnt_1
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - fastqc=0.11.9
+  - star=2.7.10b
+  - samtools=1.16.1
+  - picard
+  - salmon=1.9.0
+  - bedtools=2.30.0
+  - multiqc=1.13
+prefix: /Users/stepanletyagin/opt/anaconda3/envs/CIBP_assgmnt_1
