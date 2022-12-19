@@ -198,6 +198,7 @@ conda env create -f env_out.yml
 
 ### env_out.yml
 
+```
 name: CIBP_assgmnt_1
 channels:
   - bioconda
@@ -212,3 +213,4 @@ dependencies:
   - bedtools=2.30.0
   - multiqc=1.13
 prefix: /Users/stepanletyagin/opt/anaconda3/envs/CIBP_assgmnt_1
+```
